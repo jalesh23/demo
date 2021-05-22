@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      function calc(){
+        var p=document.getElementById("price").value;
+        var q=document.getElementById("qua").value;
+        var r=p*q;
+        //alert(r);;
+        document.getElementById("total").value=r;
+      }
+
+function validate(){
+      var p=document.getElementById("name").value;
+      var msg=document.getElementById("span");
+
+      if(p.length==0)
+        msg.innerHTML="Required";
+      else
+        msg.innerHTML="";
+      }
+function validate1(){
+    var q=document.getElementById("price").value;
+    var msg=document.getElementById("span1");
+
+        if(q<=100)
+          msg.innerHTML="very less";
+        else
+          msg.innerHTML="";
+        }
+function validate2(){
+    var q=document.getElementById("qua").value;
+    var msg=document.getElementById("span2");
+        if(q.length==0)
+          msg.innerHTML="Required";
+        else
+          msg.innerHTML="";
+                }
+
+    </script>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <input id="name" type="text" name="name" placeholder="Enter Product Name" onblur="validate()">
+      <font color="red">* <span id="span"></span></font>
+      <br><br>
+      <input id="price"type="text" name="price" placeholder="Enter Product price"  onblur="validate1()">
+      <font color="red">* <span id="span1"></span></font>
+      <br><br>
+      <input id="qua"type="text" name="qua" placeholder="Enter Product Quantity"  onblur="validate2()">
+      <font color="red">* <span id="span2"></span></font>
+      <br><br>
+      <input id="total"type="text" name="total"  placeholder="Total Amount" disabled>
+      <br>
+      <input id="total" type="button" name="btn" value="Calculate"onclick="calc()">
+
+    </form>
+
+  </body>
+</html>

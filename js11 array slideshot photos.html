@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var a =new Array(4);
+      a[0]=new Image();
+      a[0].src="snooker1.jpg";
+
+      a[1]=new Image();
+      a[1].src="snooker1.png";
+
+      a[2]=new Image();
+      a[2].src="snooker2.png";
+
+      a[3]=new Image();
+      a[3].src="snooker1.jpg";
+       i=0;
+
+      function slide(){
+          document.getElementById("img").src=a[i].src;
+          i=i+1;
+          if(i>=4)
+            i=0;
+            setTimeout("slide()",3000)
+      }
+    </script>
+    <title></title>
+  </head>
+  <body onload="slide();">
+    <center><img src="" alt="" id="img" height="400px" width="50%" ></center>
+  </body>
+</html>
